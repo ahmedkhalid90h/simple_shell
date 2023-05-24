@@ -9,11 +9,11 @@
 
 char **_strtok(char *input_str, char *delim)
 {
-    int idx1, idx2, idx3, idx4, numwords = 0;
+     int idx1, idx2, idx3, idx4, numwords = 0;
     char **arr;
 
     if (input_str == NULL || input_str[0] == 0)
-        return (NULL);
+    return (NULL);
     if (!delim)
         delim = " ";
     for (idx1 = 0; input_str[idx1] != '\0'; idx1++)
