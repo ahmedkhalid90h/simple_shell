@@ -27,7 +27,9 @@ void set_info_initializes(info_t *info, char **av)
 			;
 		info->argc = i;
 
-		/* replace_alias(info);
-		replace_vars(info); */
+		/*
+		replace_alias(info);
+		replace_vars(info);
+		*/
 	}
 }
