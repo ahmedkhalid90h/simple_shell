@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * find_commd - finds a command in PATH file path
  * @info: the parameter & return info struct
@@ -10,14 +9,12 @@ void find_commd(info_t *info)
 {
 char *path = NULL;
 int counter = 0, k = 0;
-
 info->path_f = info->argv[0];
 if (info->linecount_flag == 1)
 {
 info->line_count_++;
 info->linecount_flag = 0;
 }
-
 while (info->arg[counter])
 {
 if (!is_delimeter_char(info->arg[counter], " \t\n"))
@@ -30,7 +27,6 @@ if (!k)
 {
 return;
 }
-
 path = find_path_f(info, _getenv(info, "PATH="), info->argv[0]); 
 if (path)
 {
