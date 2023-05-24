@@ -2,16 +2,16 @@
 
 
 /**
- * check_next_f - checks if we should continue chaining based on last status done
+ * check_next_f - checks if  chaining based on last status done
  * @info: the parameter struct
- * @buf: the char buffer
+ * @u: the char buffer
  * @pos: address of current position in buf
- * @start: starting position in buf
- * @length: length of buf
+ * @s: starting position in buf
+ * @l: length of buf
  *
  * Return: void
  */
-void check_next_f(info_t *info, char *buf, size_t *pos, size_t start, size_t length)
+void check_next_f(info_t *info, char *u, size_t *pos, size_t s, size_t l)
 {
 	size_t j = *pos;
 
@@ -19,16 +19,16 @@ void check_next_f(info_t *info, char *buf, size_t *pos, size_t start, size_t len
 	{
 		if (info->status)
 		{
-			buf[start] = 0;
-			j = length;
+			u[s] = 0;
+			j = l;
 		}
 	}
 	if (info->cmd_buf_type == OR)
 	{
 		if (!info->status)
 		{
-			buf[start] = 0;
-			j = length;
+			u[s] = 0;
+			j = l;
 		}
 	}
 
