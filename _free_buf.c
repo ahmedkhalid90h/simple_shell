@@ -8,11 +8,11 @@
  */
 int _free_buf(void **ptr_adderss)
 {
-	if (ptr_adderss && *ptr_adderss)
-	{
-		free(*ptr_adderss);
-		*ptr_adderss = NULL;
-		return (1);
-	}
-	return (0);
+if (ptr_adderss && *ptr_adderss)
+{
+free(*ptr_adderss);
+*ptr_adderss = NULL;
+return (1);
+}
+return (0);
 }
