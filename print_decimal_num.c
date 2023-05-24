@@ -9,7 +9,7 @@
  */
 int print_decimal_num(int inputs, int fdesc)
 {
-	int (*__putchar)(char) = _putchar;
+	int (*__putchar)(char) = _putchar; /* up to _putchar */
 	int inx = 1000000000, count_num = 0;
 	unsigned int _abs, curr;
 

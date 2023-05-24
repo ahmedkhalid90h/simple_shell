@@ -21,7 +21,7 @@ char **list_to_str(list_t *head_node)
 	i = 0;
 	while (node)
 	{
-		str = malloc(_strlen(node->str) + 1);
+		str = malloc(strlen(node->str) + 1); /* up to _strlen */
 		if (!str)
 		{
 			js = 0;
