@@ -10,10 +10,10 @@ void _err_puts(char *string)
 {
 int inx;
 
-if(!string)
+if (!string)
 return;
-for ( inx = 0; string[inx] != '\0'; inx++)
+for (inx = 0; string[inx] != '\0'; inx++)
 {
-_err_putchar(string[inx]);  
+_err_putchar(string[inx]);
 }
 }
