@@ -14,7 +14,7 @@ list_t *node_starts_with(list_t *node, char *pf, char q)
 
 	while (node)
 	{
-		p = starts_with(node->str, pf);
+		p = starts_with_needl(node->str, pf);
 		if (p && ((q == -1) || (*p == q)))
 			return (node);
 		node = node->next;
