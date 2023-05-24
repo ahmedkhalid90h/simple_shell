@@ -16,7 +16,9 @@ char *_getenv(info_t *info, const char *name)
 	{
 		poin = starts_with_needl(node->str, name);
 		if (poin && *poin)
+			{
 			return (poin);
+			}
 		node = node->next;
 	}
 	return (NULL);

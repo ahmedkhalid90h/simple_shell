@@ -15,7 +15,7 @@ char *find_path_f(info_t *info, char *path_string, char *cmd)
 
 	if (!path_string)
 		return (NULL);
-	if ((strlen(cmd) > 2) && starts_with_needl(cmd, "./")) /* up to _strlen */
+	if ((_strlen(cmd) > 2) && starts_with_needl(cmd, "./")) /* up to _strlen */
 	{
 		if (is_cmd_(info, cmd))
 			return (cmd);
@@ -26,11 +26,11 @@ char *find_path_f(info_t *info, char *path_string, char *cmd)
 		{
 			path = dupl_chars(path_string, curr_pos, idx52);
 			if (!*path)
-				strcat(path, cmd); /* up to _strcat */
+				_strcat(path, cmd); /* up to _strcat */
 			else
 			{
-				strcat(path, "/"); /* up to _strcat */
-				strcat(path, cmd); /* up to _strcat */
+				_strcat(path, "/"); /* up to _strcat */
+				_strcat(path, cmd); /* up to _strcat */
 			}
 			if (is_cmd_(info, path))
 				return (path);

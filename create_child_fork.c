@@ -36,7 +36,7 @@ void create_child_fork(info_t *info)
 		{
 			info->status = WEXITSTATUS(info->status);
 			if (info->status == 126)
-				print_err(info, "Permission denied\n");
+				print_err(info, "Permission is denied\n");
 		}
 	}
 }
