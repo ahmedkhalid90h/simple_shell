@@ -54,7 +54,7 @@ typedef struct liststr
  *@linecount_flag: if on count this line of input pointer
  *@filename: the program file name
  *@env: linked list local copy of environ is env
- *@environ: custom modified copy of environ from LL env 
+ *@environ: custom modified copy of environ from LL env
  *@alias: the alias node list
  *@env_changed: on if environ was changed
  *@status: the return status of the last exec'd command line
@@ -105,7 +105,7 @@ int interactive_mode(info_t *);
 int _err_putchar(char);
 ssize_t get_input_nline(info_t *);
 ssize_t input_buf(info_t *, char **, size_t *);
-void check_next_f(info_t *, char *, size_t *, size_t , size_t );
+void check_next_f(info_t *, char *, size_t *, size_t, size_t );
 int is_next_c(info_t *, char *, size_t *);
 void set_info_initializes(info_t *, char **);
 int is_delimeter_char(char, char *);
