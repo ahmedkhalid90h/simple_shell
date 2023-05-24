@@ -20,7 +20,7 @@ if (!is_delimeter_char(input_str[idx1], delim) && (is_delimeter_char(input_str[i
 numwords++;
 if (numwords == 0)
 return (NULL);
-arr = malloc((1 + numwords) * sizeof(char * ));
+arr = malloc((1 + numwords) *sizeof(char *));
 if (!arr)
 return (NULL);
 for (idx1 = 0, idx2 = 0; idx2 < numwords; idx2++)
