@@ -60,7 +60,7 @@ typedef struct liststr
  *@status: the return status of the last exec'd command line
  *@cmd_buf: address of pointer to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type ||, &&, ;
- *@_f: the fd from which to read line input
+ *@readfd_f: the fd from which to read line input
  */
 typedef struct passinfo
 {
