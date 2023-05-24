@@ -129,6 +129,11 @@ void _puts_str(char *);
 int populate_env_list(info_t *);
 void _free_info_struct(info_t *, int);
 int _putchar_fd(char, int);
+ssize_t get_node_index(list_t *, list_t *);
+ssize_t get_node_index(list_t *, list_t *);
+int _env(info_t *);
+size_t print_list_str(const list_t *);
+int env_list(info_t *);
 
 
 
