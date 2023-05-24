@@ -6,9 +6,9 @@
  *
  * Return: void
  */
-void sigint_Handler(__attribute__((unused))int signal_number)
+void sigint_Handler(__attribute__((unused)) int signal_number)
 {
-	puts("\n");   /* up _puts_str */
-	puts("$ ");   /* up _puts_str */
-	putchar(BUF_FLUSH);   /* up _putchar */
+	puts("\n");			/* up _puts_str */
+	puts("$ ");			/* up _puts_str */
+	putchar(BUF_FLUSH); /* up _putchar */
 }
