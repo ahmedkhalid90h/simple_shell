@@ -1,7 +1,7 @@
 #include<shell.h>
 
 /**
- * add_node_end - adds the node to the end of the list
+ *  add_node_end- adds the node to the end of the list
  * @head: the address of the pointer to the head node
  * @str: str field of node
  * @num: node index that used by the history

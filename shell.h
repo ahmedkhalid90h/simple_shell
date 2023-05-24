@@ -136,10 +136,10 @@ list_t *add_node_end(list_t **, const char *, int);
 
 
 ssize_t get_node_index(list_t *, list_t *);
-ssize_t get_node_index(list_t *, list_t *);
 int _env(info_t *);
 size_t print_list_str(const list_t *);
 int env_list(info_t *);
+list_t *node_starts_with(list_t *, char *, char);
 
 
 size_t list_length(const list_t *);
