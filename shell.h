@@ -84,10 +84,6 @@ typedef struct passinfo
 } info_t;
 
 
-#define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0}
-
 /**
  *struct builtin - contains a builtin string and related function
  *@type: the builtin command flag
@@ -131,6 +127,7 @@ int is_delimeter_char(char, char *);
 int _puts_fd(char *, int);
 void _puts_str(char *);
 int populate_env_list(info_t *);
+void _free_info_struct(info_t *, int);
 
 
 
