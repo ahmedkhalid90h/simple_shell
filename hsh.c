@@ -12,7 +12,7 @@ int hsh(info_t *info, char **av_vector)
 	ssize_t r = 0;
 	int builtin_ret_co = 0;
 
-	for ( ;r != -1 && builtin_ret_co != -2; )
+	for (; r != -1 && builtin_ret_co != -2; )
 	{
 		initializes_info(info);
 		if (interactive_mode(info))

@@ -15,7 +15,7 @@ if (input_str == NULL || input_str[0] == 0)
 return (NULL);
 if (!delim)
 delim = " ";
-for idx1 = 0; input_str[idx1] != '\0'; idx1++)
+for (idx1 = 0; input_str[idx1] != '\0'; idx1++)
 if (!is_delimeter_char(input_str[idx1], delim) && (is_delimeter_char(input_str[idx1 + 1], delim) || !input_str[idx1 + 1]))
 numwords++;
 if (numwords == 0)
