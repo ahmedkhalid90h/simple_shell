@@ -19,3 +19,4 @@ int _puts_fd(char *string, int fd)
 	}
 	return (i);
 }
+
