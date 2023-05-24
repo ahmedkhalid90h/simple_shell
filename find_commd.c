@@ -27,7 +27,7 @@ if (!k)
 {
 return;
 }
-path = find_path_f(info, _getenv(info, "PATH="), info->argv[0]); 
+    path = find_path_f(info, _getenv(info, "PATH="), info->argv[0]); 
 if (path)
 {
 info->path_f = path;
