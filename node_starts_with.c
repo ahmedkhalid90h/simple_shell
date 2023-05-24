@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * node_starts_with - returns node whose str get starts with 
+ * node_starts_with - returns node whose str get starts with
  * @node: pointer to list head
  * @pf: string to match
  * @q: the next character after prefix to match

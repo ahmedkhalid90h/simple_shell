@@ -129,7 +129,7 @@ void _puts_str(char *);
 int populate_env_list(info_t *);
 void _free_info_struct(info_t *, int);
 int _putchar_fd(char, int);
-int delete_node_at_index(list_t **, unsigned);
+int delete_node_at_index(list_t **, unsigned int);
 list_t *add_node_end(list_t **, const char *, int);
 
 
