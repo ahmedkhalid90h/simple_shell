@@ -105,7 +105,7 @@ int interactive_mode(info_t *);
 int _err_putchar(char);
 ssize_t get_input_nline(info_t *);
 ssize_t input_buf(info_t *, char **, size_t *);
-void check_next_f(info_t *, char *, size_t *, size_t, size_t );
+void check_next_f(info_t *, char *, size_t *, size_t, size_t);
 int is_next_c(info_t *, char *, size_t *);
 void set_info_initializes(info_t *, char **);
 int is_delimeter_char(char, char *);

@@ -16,7 +16,8 @@ return (NULL);
 if (!z)
 z = " ";
 for (idx1 = 0; q[idx1] != '\0'; idx1++)
-if (!is_delimeter_char(q[idx1], z) && (is_delimeter_char(q[idx1 + 1], z) || !q[idx1 + 1]))
+if (!is_delimeter_char(q[idx1], z) && (is_delimeter_char(q[idx1 + 1], z) ||
+!q[idx1 + 1]))
 numwords++;
 if (numwords == 0)
 return (NULL);
