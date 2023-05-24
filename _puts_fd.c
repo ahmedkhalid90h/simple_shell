@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *_putsfd - prints an input string or character
+ *_puts_fd - prints an input string or character
  * @string: the string to be printed
  * @fd: the file descriptor to write to
  *
