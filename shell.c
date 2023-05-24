@@ -9,9 +9,8 @@
  */
 int main(int argc, char **argv)
 {
-	info_t info[] = {NULL, NULL, NULL, 0, 0, 0, 0,\
-	NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0};
+	info_t info[] = {{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+	0, 0}};
 	int fp;
 
 	if (argc == 2)

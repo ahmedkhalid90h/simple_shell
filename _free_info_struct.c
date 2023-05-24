@@ -7,13 +7,13 @@
  */
 void _free_info_struct(info_t *info, int all_tr)
 {
-	free_str_list(info->argv_x);
-	info->argv_x= NULL;
+	free_str_list(info->argv);
+	info->argv= NULL;
 	info->path_f = NULL;
 	if (all_tr)
 	{
 		if (!info->cmd_buf)
-			free(info->arg_c);
+			free(info->arg);
 		if (info->env)
 			free_list_node(&(info->env));
 		if (info->alias)

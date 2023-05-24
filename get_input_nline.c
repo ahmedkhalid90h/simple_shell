@@ -11,7 +11,7 @@ ssize_t get_input_nline(info_t *info)
     static char *chain_buf;
     static size_t chain_buf_pos, current_pos, chain_buf_len;
     ssize_t bytes_read = 0;
-    char **current_cmd_p = &(info->arg_c), *current_pos_p;
+    char **current_cmd_p = &(info->arg), *current_pos_p;
 
     putchar(BUF_FLUSH); /* up to _putchar*/
     bytes_read = input_buf(info, &chain_buf, &chain_buf_len);

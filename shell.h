@@ -45,8 +45,8 @@ typedef struct liststr
 /**
  *struct passinfo - contains pseudo-arguements to pass into a function,
  *		allowing uniform prototype for function pointer struct pointer struct
- *@arg_c: a string generated from getline containing arguements pointer
- *@argv_x: an array of strings generated from arg is arg
+ *@arg: a string generated from getline containing arguements pointer
+ *@argv: an array of strings generated from arg is arg
  *@path_f: a string path for the current command  line
  *@argc: the argument count  for the current command line
  *@line_count_: the error count  for the current command line
@@ -64,8 +64,8 @@ typedef struct liststr
  */
 typedef struct passinfo
 {
-	char *arg_c;
-	char **argv_x;
+	char *arg;
+	char **argv;
 	char *path_f;
 	int argc;
 	unsigned int line_count_;
@@ -128,6 +128,7 @@ int _puts_fd(char *, int);
 void _puts_str(char *);
 int populate_env_list(info_t *);
 void _free_info_struct(info_t *, int);
+int _putchar_fd(char, int);
 
 
 

@@ -6,8 +6,8 @@
  */
 void initializes_info(info_t *info)
 {
-	info->arg_c = NULL;
-	info->argv_x = NULL;
+	info->arg = NULL;
+	info->argv = NULL;
 	info->path_f = NULL;
 	info->argc = 0;
 }

@@ -13,7 +13,7 @@ void print_err(info_t *info, char *e_string)
 	_err_puts(": ");
 	print_decimal_num(info->line_count_, STDERR_FILENO);
 	_err_puts(": ");
-	_err_puts(info->argv_x[0]);
+	_err_puts(info->argv[0]);
 	_err_puts(": ");
 	_err_puts(e_string);
 }
