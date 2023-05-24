@@ -132,6 +132,7 @@ int _putchar_fd(char, int);
 int delete_node_at_index(list_t **, unsigned int);
 list_t *add_node_end(list_t **, const char *, int);
 
+char *_memset(char *, char, unsigned int);
 
 
 
