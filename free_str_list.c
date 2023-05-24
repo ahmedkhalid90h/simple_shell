@@ -12,7 +12,8 @@ if (!str_ing)
 {
 return;
 }
-    for (i = 0; str_ing[i]; i++) {
+for (i = 0; str_ing[i]; i++)
+{
 free(str_ing[i]);
 }
 free(a);
