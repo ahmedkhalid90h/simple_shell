@@ -48,6 +48,4 @@ else if (*(info->arg) != '\n')
 {
 info->status = 127;
 print_err(info, "not found\n");
-}
-}
-}
+}}}
