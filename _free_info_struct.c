@@ -8,7 +8,7 @@
 void _free_info_struct(info_t *info, int all_tr)
 {
 	free_str_list(info->argv);
-	info->argv= NULL;
+	info->argv = NULL;
 	info->path_f = NULL;
 	if (all_tr)
 	{
