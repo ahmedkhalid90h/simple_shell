@@ -9,11 +9,12 @@
 int is_delimeter_char(char cha, char *delimeter)
 {
 int i;
-for (i = 0; delimeter[i] != '\0'; i++) {
+for (i = 0; delimeter[i] != '\0'; i++)
+{
 if (delimeter[i] == cha)
 {
-return 1;
+return (1);
 }
 }
-return 0;
+return (0);
 }
