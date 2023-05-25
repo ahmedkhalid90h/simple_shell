@@ -43,11 +43,8 @@ int hsh(info_t *info, char **av)
 	if (builtin_ret_zwe == -2)
 	{
 		if (info->err_num == -1)
-		{
 			exit(info->status);
-		}
 		exit(info->err_num);
 	}
 	return (builtin_ret_zwe);
 }
-
