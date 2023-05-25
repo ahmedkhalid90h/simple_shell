@@ -7,9 +7,8 @@
  */
 int _change_dir(info_t *info)
 {
-	char *s, *dir_qw, buffer_ss[1024];
-	int chdir_ret;
-	s = getcwd(buffer_ss, 1024);
+	char *s, *dir_qw, buffer_ss[1024];int chdir_ret;s = getcwd(buffer_ss, 1024);
+	
 	if (!s)
 		_puts("TODO: >>getcwd failure  emsg here<<\n");
 	if (!info->argv[1])

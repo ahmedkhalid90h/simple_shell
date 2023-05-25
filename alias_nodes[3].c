@@ -2,8 +2,8 @@
 /**
  * add_de_end - adds a node to the end of the list or at the beginning
  * @head: address of pointer to head node of list
- * @str: str field of node to add
- * @num: node index used by history
+ * @stri: str field of node to add
+ * @numb: node index used by history
  *
  * Return: size of list
  */
