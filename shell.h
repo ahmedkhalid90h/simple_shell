@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef _SHELL_H_
+#define _SHELL_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -78,11 +78,10 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char *cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+	char **cmd_buf;	  /* pointer to cmd ; chain buffer, for memory mangement */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 } info_t;
-
 
 
 /**
@@ -96,69 +95,64 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
-int hsh(info_t, char *);
-int che_bul(info_t *);
+int hsh(info_t *, char **);
+int check_builtin(info_t *);
+void find_cmd(info_t *);
+void create_child(info_t *);
 
-void find_comed(info_t *);
-void cre_ch(info_t *);
+int is_cmd(info_t *, char *);
+char *dup_chars(char *, int, int);
+char *find_path(info_t *, char *, char *);
 
-int is_comid(info_t *, char *);
-char *dup_ch(char *, int, int);
-char *find_th(info_t *, char *, char *);
+int loophsh(char **);
 
-/* not use int loophsh(char **); */
-
-void _puts_error(char *);
-int putchar_error(char);
-int _puy_fd(char c, int fd);
-int _treefd(char *str, int fd);
+void _error_puts(char *);
+int _error_putchar(char);
+int _putchar_fd(char c, int fd);
+int _putsfd(char *str, int fd);
 
 int _strlen(char *);
 int _strcmp(char *, char *);
-char *sta_with(const char *, const char *);
+char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
 char *_strcpy(char *, char *);
 char *_strncpy(char *, char *, int);
-
 char *_strncat(char *, char *, int);
-char *_strchr_yu(char *, char);
-
+char *_strchr(char *, char);
 char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
 char **_strtok(char *, char *);
 
-void list_free_str(char **);
+void free_string_list(char **);
 
-int _buffer_free(void **);
+int _free_buffer(void **);
 
-int inter_mod(info_t *);
-int is_delim(char, char *);
+int interactive(info_t *);
+int is_delimeter(char, char *);
 
-int _atoi_error(char *);
-void error_print(info_t *, char *);
-int prnt_deci(int, int);
-
+int _error_atoi(char *);
+void print_error(info_t *, char *);
+int print_decimal(int, int);
 char *_itoa(long int num, int base, int flags);
 
 int exit_shell(info_t *);
 int _change_dir(info_t *);
+int _myalias(info_t *);
 
-ssize_t in_bu(info_t *info, char **buf, size_t *len);
-ssize_t get_in(info_t *);
+ssize_t input_buffer(info_t *info, char **buf, size_t *len);
+ssize_t get_input(info_t *);
 void sigintHandler(int);
 
-void cle_in(info_t *);
-void set_t_info(info_t, char *);
-void info_free(info_t *, int);
+void clear_info(info_t *);
+void set_info(info_t *, char **);
+void free_info(info_t *, int);
 
 char *_getenv(info_t *, const char *);
 int _env(info_t *);
-int _my_setenv(info_t *);
-
-
+int _mysetenv(info_t *);
 int _myunsetenv(info_t *info);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
@@ -167,37 +161,33 @@ int env_list(info_t *);
 char **get_environ(info_t *);
 
 size_t print_list_str(const list_t *);
-void list_free(list_t **);
+void free_list(list_t **);
 
-
-size_t list_leng(const list_t *);
-char **list_to_str(list_t *);
+size_t list_len(const list_t *);
+char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
+ssize_t get_node_index(list_t *, list_t *);
+int delete_node_at_index(list_t **, unsigned int);
+list_t *add_node_end(list_t **, const char *, int);
+list_t *node_starts_with(list_t *, char *, char);
+char *_memset(char *, char, unsigned int);
 
+int is_next(info_t *, char *, size_t *);
+void check_next(info_t *, char *, size_t *, size_t, size_t);
+int replace_alias(info_t *);
+int print_alias(list_t *);
+int replace_vars(info_t *);
+void comment_handling(char *);
+int replace_string(char **, char *);
 ssize_t gt_de_idx(list_t *, list_t *);
-int delete_de_idx(list_t **, unsigned int);
-list_t add_de_end(list_t *, const char *, int);
 list_t *de_starts(list_t *, char *, char);
-
-int unset_al(info_t *, char *);
-
-
-int set_al(info_t *, char *);
-int print_al(list_t *);
-int _myalias(info_t *);
-int replace_al(info_t *);
-char *_mem_cut(char *, char, unsigned int);
-
-int is_nxt(info_t *, char *, size_t *);
-void che_ne(info_t *, char *, size_t *, size_t, size_t);
-int repla_vars(info_t *);
-void comt_handl(char *);
-int repla_str(char **, char *);
+int delete_de_idx(list_t **, unsigned int);
+list_t *add_de_end(list_t **, const char *, int);
 
 void *_realloc(void *, unsigned int, unsigned int);
-int _getline(info_t, char *, size_t *);
+int _getline(info_t *, char **, size_t *);
 ssize_t read_buf(info_t *info, char *buf, size_t *i);
 
-int populate_env(info_t *);
+int populate_env_list(info_t *);
 
 #endif
