@@ -9,18 +9,18 @@
  */
 int putchar_error(char cha)
 {
-	static int i;
-	static char buf_ssa[WRITE_BUF_SIZE];
+static int i;
+static char buf_ssa[WRITE_BUF_SIZE];
 
-	if (cha == BUF_FLUSH || i >= WRITE_BUF_SIZE)
-	{
-		write(2, buf_ssa, i);
-		i = 0;
-	}
-	if (cha != BUF_FLUSH)
-	{
-        buf_ssa[i++] = cha;
-    }
-	return (1);
+if (cha == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+{
+write(2, buf_ssa, i);
+i = 0;
+}
+if (cha != BUF_FLUSH)
+{
+buf_ssa[i++] = cha;
+}
+return (1);
 }
 
