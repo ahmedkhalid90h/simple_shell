@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * _putchar_fd - writes the character c to given fd
+ * _puy_fd - writes the character c to given fd
  * @c: The character to print
  * @fd: The file descriptor to write to
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar_fd(char c, int fd)
+int _puy_fd(char c, int fd)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];

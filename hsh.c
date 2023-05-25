@@ -14,30 +14,30 @@ int hsh(info_t *info, char **av)
 
 	while (r != -1 && builtin_ret_zwe != -2)
 	{
-		clear_info(info);
-		if (interactive(info))
+		cle_in(info);
+		if (inter_mod(info))
 			{
 				_puts("$ ");
 			}
-		_error_putchar(BUF_FLUSH);
-		r = get_input(info);
+		putchar_error(BUF_FLUSH);
+		r = get_in(info);
 		if (r != -1)
 		{
-			set_info(info, av);
-			builtin_ret_zwe = check_builtin(info);
+			set_t_info(info, av);
+			builtin_ret_zwe = che_bul(info);
 			if (builtin_ret_zwe == -1)
 				{
-					find_cmd(info);
+					find_comed(info);
 				}
 		}
-		else if (interactive(info))
+		else if (inter_mod(info))
 			{
 				_putchar('\n');
 			}
-		free_info(info, 0);
+		info_free(info, 0);
 	}
-	free_info(info, 1);
-	if (!interactive(info) && info->status)
+	info_free(info, 1);
+	if (!inter_mod(info) && info->status)
 		{
 			exit(info->status);
 		}

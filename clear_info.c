@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * clear_info - initializes info_t struct members to NULL
+ * cle_in - initializes info_t struct members to NULL
  * @info: struct address to initialize
  */
-void clear_info(info_t *info)
+void cle_in(info_t *info)
 {
 	info->arg = NULL;
 	info->argv = NULL;

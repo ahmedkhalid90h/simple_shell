@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * check_next - checks we should continue chaining based on last status and type
+ * che_ne - checks we should continue chaining based on last status and type
  * @info: the parameter struct containing shell info
  * @buffa: the char buffer to check
  * @p_qe: address of current position in buf to update
@@ -10,7 +10,7 @@
  *
  * Return: Void
  */
-void check_next(info_t *info, char *buffa, size_t *p_qe, size_t i, size_t leng)
+void che_ne(info_t *info, char *buffa, size_t *p_qe, size_t i, size_t leng)
 {
 	size_t j = *p_qe;
 

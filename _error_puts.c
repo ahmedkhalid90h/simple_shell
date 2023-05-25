@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- *_error_puts - prints an input string the standard error
+ *_puts_error - prints an input string the standard error
  * @str: the string to be printed to stderr
  *
  * Return: Nothing
  */
-void _error_puts(char *str)
+void _puts_error(char *str)
 {
 	int i = 0;
 
@@ -16,7 +16,7 @@ void _error_puts(char *str)
         }
 	while (str[i] != '\0')
 	{
-		_error_putchar(str[i]);
+		putchar_error(str[i]);
 		i++;
 	}
 }

@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * dup_chars - duplicates characters or strings from a buffer
+ * dup_ch - duplicates characters or strings from a buffer
  * @path_str: the PATH string to duplicate from
  * @start_idx: starting index of the string to duplicate
  * @stop_idx: stopping index of the string to duplicate
  *
  * Return: pointer to new buffer
  */
-char *dup_chars(char *path_str, int start_idx, int stop_idx)
+char *dup_ch(char *path_str, int start_idx, int stop_idx)
 {
 static char buf[1024];
 int k = 0;

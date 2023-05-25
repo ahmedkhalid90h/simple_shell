@@ -1,20 +1,20 @@
 #include "shell.h"
 
 /**
- * print_decimal - function prints a decimal (integer) number (base 10) to a
+ * prnt_deci - function prints a decimal (integer) number (base 10) to a
  * @input: the input integer to print
  * @fxzw: the filedescriptor to write to (1 for stdout, 2 for stderr)
  *
  * Return: number of characters printed
  */
-int print_decimal(int input, int fxzw)
+int prnt_deci(int input, int fxzw)
 {
 	int (*__putchar)(char) = _putchar;
 	int m, count = 0;
 	unsigned int _abs_, current;
 
 	if (fxzw == STDERR_FILENO)
-		__putchar = _error_putchar;
+		__putchar = putchar_error;
 	if (input < 0)
 	{
 		_abs_ = -input;

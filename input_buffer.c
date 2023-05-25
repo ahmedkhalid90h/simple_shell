@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * input_buffer - buffers chained commands from stdin
+ * in_bu - buffers chained commands from stdin
  * @info: parameter struct containing shell variables
  * @bufzz: address of buffer pointer
  * @leng: address of len var to store buffer length
  *
  * Return: bytes read
  */
-ssize_t input_buffer(info_t *info, char **bufzz, size_t *leng)
+ssize_t in_bu(info_t *info, char **bufzz, size_t *leng)
 {
 	ssize_t r = 0;
 	size_t len_p = 0;
@@ -29,7 +29,7 @@ ssize_t input_buffer(info_t *info, char **bufzz, size_t *leng)
 				r--;
 			}
 			info->linecount_flag = 1;
-			comment_handling(*bufzz);
+			comt_handl(*bufzz);
 			*leng = r;
 			info->cmd_buf = bufzz;
 		}

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * get_input - gets a line minus the newline character
+ * get_in - gets a line minus the newline character
  * @info: parameter struct containing shell variables
  *
  * Return: bytes read
  */
-ssize_t get_input(info_t *info)
+ssize_t get_in(info_t *info)
 {
 	static char *buf_zw; /* the ';' command chain buffer */
 	static size_t i, dx, leng;
@@ -14,7 +14,7 @@ ssize_t get_input(info_t *info)
 	char **buf_p = &(info->arg), *p;
 
 	_putchar(BUF_FLUSH);
-	r = input_buffer(info, &buf_zw, &leng);
+	r = in_bu(info, &buf_zw, &leng);
 	if (r == -1) /* EOF */
 		return (-1);
 	if (leng)	/* we have commands left in the chain buffer */
@@ -22,10 +22,10 @@ ssize_t get_input(info_t *info)
 		dx = i; /* init new iterator to current buf position */
 		p = buf_zw + i; /* get pointer for return */
 
-		check_next(info, buf_zw, &dx, i, leng);
+		che_ne(info, buf_zw, &dx, i, leng);
 		while (dx < leng) /* iterate to semicolon or end */
 		{
-			if (is_next(info, buf_zw, &dx))
+			if (is_nxt(info, buf_zw, &dx))
 				break;
 			dx++;
 		}

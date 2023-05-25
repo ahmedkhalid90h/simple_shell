@@ -14,7 +14,7 @@ char *_getenv(info_t *info, const char *name)
 
 	while (node)
 	{
-		poin = starts_with(node->str, name);
+		poin = sta_with(node->str, name);
 		if (poin && *poin)
 			{
 			return (poin);

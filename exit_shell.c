@@ -13,16 +13,16 @@ int exit_shell(info_t *info)
 
 	if (info->argv[1]) /* If there is an exit arguement */
 	{
-		exitch = _error_atoi(info->argv[1]);
+		exitch = _atoi_error(info->argv[1]);
 		if (exitch == -1)
 		{
 			info->status = 2;
-			print_error(info, "Illegal number: ");
-			_error_puts(info->argv[1]);
-			_error_putchar('\n');
+			error_print(info, "Illegal number: ");
+			_puts_error(info->argv[1]);
+			putchar_error('\n');
 			return (1);
 		}
-		info->err_num = _error_atoi(info->argv[1]);
+		info->err_num = _atoi_error(info->argv[1]);
 		return (-2);
 	}
 	info->err_num = -1;

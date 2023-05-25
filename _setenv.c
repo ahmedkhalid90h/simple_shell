@@ -1,17 +1,17 @@
 #include "shell.h"
 
 /**
- * _mysetenv - Initialize a new environment variable,
+ * _my_setenv - Initialize a new environment variable,
  *			 or modify an existing one or print all env vars
  * @info: Structure containing potential arguments. Used to maintain
  *		constant function prototype and to print all env vars
  *  Return: Always 0
  */
-int _mysetenv(info_t *info)
+int _my_setenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
-		_error_puts("Incorrect number of arguements\n");
+		_puts_error("Incorrect number of arguements\n");
 		return (1);
 	}
 	if (_setenv(info, info->argv[1], info->argv[2]))
@@ -48,7 +48,7 @@ int _setenv(info_t *info, char *var_sq, char *val)
 	node = info->env;
 	while (node)
 	{
-		p_q = starts_with(node->str, var_sq);
+		p_q = sta_with(node->str, var_sq);
 		if (p_q && *p_q == '=')
 		{
 			free(node->str);
@@ -58,7 +58,7 @@ int _setenv(info_t *info, char *var_sq, char *val)
 		}
 		node = node->next;
 	}
-	add_node_end(&(info->env), buf, 0);
+	add_de_end(&(info->env), buf, 0);
 	free(buf);
 	info->env_changed = 1;
 	return (0);

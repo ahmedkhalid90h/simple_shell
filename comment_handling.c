@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * comment_handling - function replaces first instance of '#' with '\0' in buf
+ * comt_handl - function replaces first instance of '#' with '\0' in buf
  * @buf_qw: address of the string to modify in place
  *
  * Return: Always 0;
  */
-void comment_handling(char *buf_qw)
+void comt_handl(char *buf_qw)
 {
 	int idx;
 

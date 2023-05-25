@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _error_atoi - converts a string to an integer
+ * _atoi_error - converts a string to an integer
  * @s: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
-int _error_atoi(char *s)
+int _atoi_error(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;

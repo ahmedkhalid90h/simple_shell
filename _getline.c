@@ -29,7 +29,7 @@ int _getline(info_t *info, char **ptr_q, size_t *leng)
 		{
 			return (-1);
 		}
-	c = _strchr(buf_ff + i, '\n');
+	c = _strchr_yu(buf_ff + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf_ff) : len;
 	new_p = _realloc(p, s, s ? s + k : k + 1);
 	if (!new_p) /* MALLOC FAILURE! */

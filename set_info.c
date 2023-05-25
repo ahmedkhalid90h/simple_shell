@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * set_info - initializes info_t struct with arguments
+ * set_t_info - initializes info_t struct with arguments
  * @info: struct address to initialize
  * @av: argument vector to initialize with
  */
-void set_info(info_t *info, char **av)
+void set_t_info(info_t *info, char **av)
 {
 	int i = 0;
 
@@ -24,7 +24,7 @@ void set_info(info_t *info, char **av)
 		}
 		for (i = 0; info->argv && info->argv[i]; i++);
 		info->argc = i;
-		replace_alias(info);
-		replace_vars(info);
+		replace_al(info);
+		repla_vars(info);
 	}
 }

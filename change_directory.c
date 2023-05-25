@@ -43,8 +43,8 @@ int _change_dir(info_t *info)
 		chdir_ret = chdir(info->argv[1]);
 	if (chdir_ret == -1)
 	{
-		print_error(info, "can't  cd to ");
-		_error_puts(info->argv[1]), _error_putchar('\n');
+		error_print(info, "can't  cd to ");
+		_puts_error(info->argv[1]), putchar_error('\n');
 	}
 	else
 	{

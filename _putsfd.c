@@ -7,7 +7,7 @@
  *
  * Return: the number of chars put
  */
-int _putsfd(char *string, int fd) /*not file _putsfd */
+int _treefd(char *string, int fd)
 {
 	int i = 0;
 
@@ -15,7 +15,7 @@ int _putsfd(char *string, int fd) /*not file _putsfd */
 		return (0);
 	while (*string)
 	{
-		i += _putchar_fd(*string++, fd);
+		i += _puy_fd(*string++, fd);
 	}
 	return (i);
 }

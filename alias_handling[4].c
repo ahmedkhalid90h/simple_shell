@@ -17,20 +17,20 @@ int _myalias(info_t *info)
 		node = info->alias;
 		while (node)
 		{
-			print_alias(node);
+			print_al(node);
 			node = node->next;
 		}
 		return (0);
 	}
 	for (i = 1; info->argv[i]; i++)
 	{
-		p_w = _strchr(info->argv[i], '=');
+		p_w = _strchr_yu(info->argv[i], '=');
 		if (p_w)
 			{
-				set_alias(info, info->argv[i]);
+				set_al(info, info->argv[i]);
 			}
 		else
-			print_alias(node_starts_with(info->alias, info->argv[i], '='));
+			print_al(de_starts(info->alias, info->argv[i], '='));
 	}
 
 	return (0);

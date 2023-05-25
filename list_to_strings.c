@@ -1,15 +1,15 @@
 #include "shell.h"
 
 /**
- * list_to_strings - returns an array of strings of the list->str values
+ * list_to_str - returns an array of strings of the list->str values
  * @head: pointer to first node in list
  *
  * Return: array of strings
  */
-char **list_to_strings(list_t *head)
+char **list_to_str(list_t *head)
 {
 	list_t *node = head;
-	size_t i = list_len(head), jx;
+	size_t i = list_leng(head), jx;
 	char **strs_z;
 	char *str;
 
