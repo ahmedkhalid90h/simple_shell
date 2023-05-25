@@ -17,7 +17,7 @@ if (!z)
 z = " ";
 for (idx1 = 0; q[idx1] != '\0'; idx1++)
 {
-if (!is_delimeter_char(q[idx1], z) && (is_delimeter_char(q[idx1 + 1], z) ||
+if (!is_delimeter(q[idx1], z) && (is_delimeter(q[idx1 + 1], z) ||
 !q[idx1 + 1]))
 numwords++;
 if (numwords == 0)
@@ -28,12 +28,12 @@ if (!arr)
 return (NULL);
 for (idx1 = 0, idx2 = 0; idx2 < numwords; idx2++)
 {
-while (is_delimeter_char(q[idx1], z))
+while (is_delimeter(q[idx1], z))
 {
 	idx1++;
 }
 idx3 = 0;
-while (!is_delimeter_char(q[idx1 + idx3], z) && q[idx1 + idx3])
+while (!is_delimeter(q[idx1 + idx3], z) && q[idx1 + idx3])
 {
 idx3++;
 }
