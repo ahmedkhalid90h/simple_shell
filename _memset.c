@@ -7,7 +7,7 @@
  *@n: the amount of the th  bytes to be filled
  *Return: (s) a pointer  bythe theto the memory area s
  */
-char *_mem_cut(char *s, char b_q, unsigned int n)
+char *_memset(char *s, char b_q, unsigned int n) /* not file  _memset*/
 {
 	unsigned int iD;
 

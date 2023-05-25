@@ -7,7 +7,7 @@
  *
  * Return: the number of chars put
  */
-int _puts_fd(char *string, int fd)
+int _putsfd(char *string, int fd) /*not file _putsfd */
 {
 	int i = 0;
 
