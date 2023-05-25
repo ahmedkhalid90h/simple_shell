@@ -96,7 +96,7 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
-int hsh(info_t , char *);
+int hsh(info_t, char *);
 int che_bul(info_t *);
 
 void find_comed(info_t *);
@@ -151,7 +151,7 @@ ssize_t get_in(info_t *);
 void sigintHandler(int);
 
 void cle_in(info_t *);
-void set_t_info(info_t , char *);
+void set_t_info(info_t, char *);
 void info_free(info_t *, int);
 
 char *_getenv(info_t *, const char *);

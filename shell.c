@@ -9,7 +9,8 @@
  */
 int main(int argc, char **argv)
 {
-	info_t info[] = {{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0}};
+	info_t info[] = {{NULL, NULL, NULL, 0, 0, 0, 0, 
+	NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0}};
 	int s_fd;
 
 	if (argc == 2)
@@ -18,9 +19,9 @@ int main(int argc, char **argv)
 		if (s_fd == -1)
 		{
 			if (errno == EACCES)
-				{
-					exit(126);
-				}
+			{
+				exit(126);
+			}
 			if (errno == ENOENT)
 			{
 				_puts_error(argv[0]);
