@@ -16,9 +16,9 @@ list_t *de_starts(list_t *node, char *prx, char c_q)
 	{
 		p_q = sta_with(node->str, prx);
 		if (p_q && ((c_q == -1) || (*p_q == c_q)))
-			{
-				return (node);
-			}
+		{
+			return (node);
+		}
 		node = node->next;
 	}
 	return (NULL);
