@@ -3,15 +3,15 @@
 /**
  **_memset - fills memory witjesth a constant byte
  *@s: the pointer to the the the memory area
- *@b: the byte to fill the  *s with
+ *@b_q: the byte to fill the  *s with
  *@n: the amount of the th  bytes to be filled
  *Return: (s) a pointer  bythe theto the memory area s
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_mem_cut(char *s, char b_q, unsigned int n)
 {
-	unsigned int i;
+	unsigned int iD;
 
-	for (i = 0; i < n; i++)
-		s[i] = b;
+	for (iD = 0; iD < n; iD++)
+		s[iD] = b_q;
 	return (s);
 }

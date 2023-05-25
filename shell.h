@@ -12,25 +12,25 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/* for read/write buffers ? */
+/* for read/write buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-/* for command chaining ? */
-#define NORM	0
-#define OR		1
-#define AND		2
-#define CHAIN	3
+/* for command chaining */
+#define NORM 0
+#define OR 1
+#define AND 2
+#define CHAIN 3
 
-/* for convert_number() ? */
-#define CONVERT_LOWERCASE	1
-#define CONVERT_UNSIGNED	2
+/* for convert_number() */
+#define CONVERT_LOWERCASE 1
+#define CONVERT_UNSIGNED 2
 
 extern char **environ;
 
 /**
- * struct liststr - singly linked list is linked list
+ * struct liststr - singly linked list
  * @num: the number field
  * @str: a string
  * @next: points to the next node
@@ -44,44 +44,45 @@ typedef struct liststr
 
 /**
  *struct passinfo - contains pseudo-arguements to pass into a function,
- *		allowing uniform prototype for function pointer struct pointer struct
- *@arg: a string generated from getline containing arguements pointer
- *@argv: an array of strings generated from arg is arg
- *@path_f: a string path for the current command  line
- *@argc: the argument count  for the current command line
- *@line_count_: the error count  for the current command line
- *@err_num: the error code for exit()s  exit fun
- *@linecount_flag: if on count this line of input pointer
- *@filename: the program file name
- *@env: linked list local copy of environ is env
+ *		allowing uniform prototype for function pointer struct
+ *@arg: a string generated from getline containing arguements
+ *@argv: an array of strings generated from arg
+ *@path: a string path for the current command
+ *@argc: the argument count
+ *@line_count: the error count
+ *@err_num: the error code for exit()s
+ *@linecount_flag: if on count this line of input
+ *@fname: the program filename
+ *@env: linked list local copy of environ
  *@environ: custom modified copy of environ from LL env
- *@alias: the alias node list
+ *@alias: the alias node
  *@env_changed: on if environ was changed
- *@status: the return status of the last exec'd command line
+ *@status: the return status of the last exec'd command
  *@cmd_buf: address of pointer to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type ||, &&, ;
- *@readfd_f: the fd from which to read line input
+ *@readfd: the fd from which to read line input
  */
 typedef struct passinfo
 {
 	char *arg;
 	char **argv;
-	char *path_f;
+	char *path;
 	int argc;
-	unsigned int line_count_;
+	unsigned int line_count;
 	int err_num;
 	int linecount_flag;
-	char *filename;
+	char *fname;
 	list_t *env;
 	list_t *alias;
 	char **environ;
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+	char **cmd_buf;	  /* pointer to cmd ; chain buffer, for memory mangement */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
-	int readfd_f;
+	int readfd;
 } info_t;
+
 
 
 /**
@@ -89,78 +90,101 @@ typedef struct passinfo
  *@type: the builtin command flag
  *@func: the function
  */
-
 typedef struct builtin
 {
 	char *type;
 	int (*func)(info_t *);
 } builtin_table;
 
-
-
-char *starts_with_needl(const char *, const char *);
-void sigint_Handler(int);
-void initializes_info(info_t *);
-int interactive_mode(info_t *);
-int _err_putchar(char);
-ssize_t get_input_nline(info_t *);
-ssize_t input_buf(info_t *, char **, size_t *);
-void check_next_f(info_t *, char *, size_t *, size_t, size_t);
-int is_next_c(info_t *, char *, size_t *);
-void set_info_initializes(info_t *, char **);
-int is_delimeter_char(char, char *);
-void find_commd(info_t *);
-char *find_path_f(info_t *, char *, char *);
-int is_cmd_(info_t *, char *);
-char *dupl_chars(char *, int, int);
-void create_child_fork(info_t *);
-void free_str_list(char **);
-void free_list_node(list_t **);
-int _free_buf(void **);
-void print_err(info_t *, char *);
-void _err_puts(char *);
-int print_decimal_num(int, int);
-char **list_to_str(list_t *);
 int hsh(info_t *, char **);
-char **get_environment(info_t *);
-int is_delimeter_char(char, char *);
-int _puts_fd(char *, int);
-void _puts_str(char *);
-int populate_env_list(info_t *);
-void _free_info_struct(info_t *, int);
-int _putchar_fd(char, int);
+int check_builtin(info_t *);
+void find_cmd(info_t *);
+void create_child(info_t *);
+
+int is_cmd(info_t *, char *);
+char *dup_chars(char *, int, int);
+char *find_path(info_t *, char *, char *);
+
+int loophsh(char **);
+
+void _error_puts(char *);
+int _error_putchar(char);
+int _putchar_fd(char c, int fd);
+int _putsfd(char *str, int fd);
+
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
+
+char *_strcpy(char *, char *);
+char *_strncpy(char *, char *, int);
+char *_strncat(char *, char *, int);
+char *_strchr(char *, char);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
+char **_strtok(char *, char *);
+
+void free_string_list(char **);
+
+int _free_buffer(void **);
+
+int interactive(info_t *);
+int is_delimeter(char, char *);
+
+int _error_atoi(char *);
+void print_error(info_t *, char *);
+int print_decimal(int, int);
+char *_itoa(long int num, int base, int flags);
+
+int exit_shell(info_t *);
+int _change_dir(info_t *);
+int _myalias(info_t *);
+
+ssize_t input_buffer(info_t *info, char **buf, size_t *len);
+ssize_t get_input(info_t *);
+void sigintHandler(int);
+
+void clear_info(info_t *);
+void set_info(info_t *, char **);
+void free_info(info_t *, int);
+
+char *_getenv(info_t *, const char *);
+int _env(info_t *);
+int _mysetenv(info_t *);
+int _myunsetenv(info_t *info);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+int env_list(info_t *);
+
+char **get_environ(info_t *);
+
+size_t print_list_str(const list_t *);
+void free_list(list_t **);
+
+size_t list_len(const list_t *);
+char **list_to_strings(list_t *);
+size_t print_list(const list_t *);
+ssize_t get_node_index(list_t *, list_t *);
 int delete_node_at_index(list_t **, unsigned int);
 list_t *add_node_end(list_t **, const char *, int);
-ssize_t read_buf(info_t *, char *, size_t *);
-int _getline(info_t *, char **, size_t *);
-char *_strchr(char *, char);
-void *_realloc(void *, unsigned int, unsigned int);
-char *_strncat(char *, char *, int);
-char *_strncpy(char *, char *, int);
-
-
+list_t *node_starts_with(list_t *, char *, char);
 char *_memset(char *, char, unsigned int);
 
+int is_next(info_t *, char *, size_t *);
+void check_next(info_t *, char *, size_t *, size_t, size_t);
+int replace_alias(info_t *);
+int print_alias(list_t *);
+int replace_vars(info_t *);
+void comment_handling(char *);
+int replace_string(char **, char *);
 
+void *_realloc(void *, unsigned int, unsigned int);
+int _getline(info_t *, char **, size_t *);
+ssize_t read_buf(info_t *info, char *buf, size_t *i);
 
-ssize_t get_node_index(list_t *, list_t *);
-int _env(info_t *);
-size_t print_list_str(const list_t *);
-int env_list(info_t *);
-list_t *node_starts_with(list_t *, char *, char);
-
-
-size_t list_length(const list_t *);
-
-
-int _putchar(char);
-int _strlen(char *);
-char **_strtok(char *, char *);
-char *_strdup(const char *);
-char *_strcat(char *, char *);
-char *_getenv(info_t *, const char *);
-char *_strcpy(char *, char *);
-int _strcmp(char *, char *);
-
+int populate_env_list(info_t *);
 
 #endif

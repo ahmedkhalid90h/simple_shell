@@ -1,42 +1,53 @@
 #include "shell.h"
 
 /**
- * hsh - main shell for loop hsh
- * @info: the parameter & retentry pointurn info struct
- * @av_vector: the argument vector from main()
+ * hsh - main shell loop function
+ * @info: the parameter & return info struct (unused)
+ * @av: the argument vector from main() (unused)
  *
  * Return: 0 on success, 1 on error, or error code
  */
-int hsh(info_t *info, char **av_vector)
+int hsh(info_t *info, char **av)
 {
 	ssize_t r = 0;
-	int builtin_ret_co = 0;
+	int builtin_ret_zwe = 0;
 
-	for (; r != -1 && builtin_ret_co != -2; )
+	while (r != -1 && builtin_ret_zwe != -2)
 	{
-		initializes_info(info);
-		if (interactive_mode(info))
-			puts("$ "); /* up to _puts_str */
-		_err_putchar(BUF_FLUSH);
-		r = get_input_nline(info);
+		clear_info(info);
+		if (interactive(info))
+			{
+				_puts("$ ");
+			}
+		_error_putchar(BUF_FLUSH);
+		r = get_input(info);
 		if (r != -1)
 		{
-			set_info_initializes(info, av_vector);
-			/* TODO find builtin*/
-				find_commd(info);
+			set_info(info, av);
+			builtin_ret_zwe = check_builtin(info);
+			if (builtin_ret_zwe == -1)
+				{
+					find_cmd(info);
+				}
 		}
-		else if (interactive_mode(info))
-			putchar('\n'); /* up to _putchar */
-		_free_info_struct(info, 0);
+		else if (interactive(info))
+			{
+				_putchar('\n');
+			}
+		free_info(info, 0);
 	}
-	_free_info_struct(info, 1);
-	if (!interactive_mode(info) && info->status)
-		exit(info->status);
-	if (builtin_ret_co == -2)
+	free_info(info, 1);
+	if (!interactive(info) && info->status)
+		{
+			exit(info->status);
+		}
+	if (builtin_ret_zwe == -2)
 	{
 		if (info->err_num == -1)
-			exit(info->status);
+			{
+				exit(info->status);
+			}
 		exit(info->err_num);
 	}
-	return (builtin_ret_co);
+	return (builtin_ret_zwe);
 }

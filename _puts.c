@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- *_err_puts - prints an input string
+ *_puts - prints an input string the standard output
  * @string: the string to be printed
  *
  * Return: Nothing
  */
-void _err_puts(char *string)
+void _puts(char *string)
 {
 int inx;
 
@@ -14,6 +14,6 @@ if (!string)
 return;
 for (inx = 0; string[inx] != '\0'; inx++)
 {
-_err_putchar(string[inx]);
+_putchar(string[inx]);
 }
 }
