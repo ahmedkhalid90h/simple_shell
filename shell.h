@@ -195,7 +195,7 @@ void comt_handl(char *);
 int repla_str(char **, char *);
 
 void *_realloc(void *, unsigned int, unsigned int);
-int _getline(info_t , char *, size_t *);
+int _getline(info_t, char *, size_t *);
 ssize_t read_buf(info_t *info, char *buf, size_t *i);
 
 int populate_env(info_t *);

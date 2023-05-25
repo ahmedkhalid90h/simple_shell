@@ -13,8 +13,8 @@ void list_free_str(char **pp_zz)
 		return;
 	}
 	while (*pp_zz)
-		{
-			free(*pp_zz++);
-		}
+	{
+		free(*pp_zz++);
+	}
 	free(a);
 }

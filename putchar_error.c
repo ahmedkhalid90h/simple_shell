@@ -18,8 +18,9 @@ int putchar_error(char cha)
 		i = 0;
 	}
 	if (cha != BUF_FLUSH)
-		{
-            buf_ssa[i++] = cha;
-        }
+	{
+        buf_ssa[i++] = cha;
+    }
 	return (1);
 }
+
