@@ -9,9 +9,9 @@ void list_free_str(char **pp_zz)
 	char **a = pp_zz;
 
 	if (!pp_zz)
-		{
-			return;
-		}
+	{
+		return;
+	}
 	while (*pp_zz)
 		{
 			free(*pp_zz++);

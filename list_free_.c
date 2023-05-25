@@ -11,9 +11,9 @@ void list_free(list_t **head_ptr)
 	list_t *node, *next_node_f, *head_qz;
 
 	if (!head_ptr || !*head_ptr)
-		{
-			return;
-		}
+	{
+		return;
+	}
 	head_qz = *head_ptr;
 	node = head_qz;
 	while (node)

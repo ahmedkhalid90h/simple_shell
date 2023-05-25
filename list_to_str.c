@@ -14,23 +14,23 @@ char **list_to_str(list_t *head)
 	char *str;
 
 	if (!head || !i)
-		{
-			return (NULL);
-		}
+	{
+		return (NULL);
+	}
 	strs_z = malloc(sizeof(char *) * (i + 1));
 	if (!strs_z)
-		{
-			return (NULL);
-		}
+	{
+		return (NULL);
+	}
 	for (i = 0; node; node = node->next, i++)
 	{
 		str = malloc(_strlen(node->str) + 1);
 		if (!str)
 		{
 			for (jx = 0; jx < i; jx++)
-				{
-					free(strs_z[jx]);
-				}
+			{
+				free(strs_z[jx]);
+			}
 			free(strs_z);
 			return (NULL);
 		}

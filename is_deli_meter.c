@@ -10,8 +10,8 @@ int is_delim(char c_zq, char *delim)
 {
 	while (*delim)
 		if (*delim++ == c_zq)
-			{
-				return (1);
-			}
+		{
+			return (1);
+		}
 	return (0);
 }
