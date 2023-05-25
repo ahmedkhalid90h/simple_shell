@@ -116,6 +116,7 @@ int _treefd(char *str, int fd);
 
 int _strlen(char *);
 int _strcmp(char *, char *);
+
 char *sta_with(const char *, const char *);
 char *_strcat(char *, char *);
 
@@ -139,6 +140,7 @@ int inter_mod(info_t *);
 int is_delim(char, char *);
 
 int _atoi_error(char *);
+
 void error_print(info_t *, char *);
 int prnt_deci(int, int);
 
