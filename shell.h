@@ -134,6 +134,9 @@ list_t *add_node_end(list_t **, const char *, int);
 ssize_t read_buf(info_t *, char *, size_t *);
 int _getline(info_t *, char **, size_t *);
 char *_strchr(char *, char);
+void *_realloc(void *, unsigned int, unsigned int);
+char *_strncat(char *, char *, int);
+char *_strncpy(char *, char *, int);
 
 
 char *_memset(char *, char, unsigned int);
