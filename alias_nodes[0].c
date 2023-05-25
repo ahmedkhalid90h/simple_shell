@@ -14,9 +14,9 @@ ssize_t gt_de_idx(list_t *head, list_t *node)
 	while (head)
 	{
 		if (head == node)
-			{
-				return (i);
-			}
+		{
+			return (i);
+		}
 		head = head->next;
 		i++;
 	}

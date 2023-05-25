@@ -32,12 +32,13 @@ list_t *add_de_end(list_t **head, const char *stri, int numb)
 	if (node)
 	{
 		while (node->next)
-			{
-				node = node->next;
-			}
+		{
+			node = node->next;
+		}
 		node->next = new_node;
 	}
 	else
 		*head = new_node;
 	return (new_node);
 }
+
