@@ -44,9 +44,9 @@ int env_list(info_t *info)
 	size_t iz;
 
 	for (iz = 0; environ[iz]; iz++)
-		{
-			add_de_end(&node, environ[iz], 0);
-		}
+	{
+		add_de_end(&node, environ[iz], 0);
+	}
 	info->env = node;
 	return (0);
 }

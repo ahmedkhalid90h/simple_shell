@@ -11,9 +11,9 @@ void _puts_error(char *str)
 	int i = 0;
 
 	if (!str)
-		{
-            return;
-        }
+	{
+        return;
+    }
 	while (str[i] != '\0')
 	{
 		putchar_error(str[i]);
