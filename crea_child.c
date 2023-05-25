@@ -22,9 +22,9 @@ void cre_ch(info_t *info)
 		{
 			info_free(info, 1);
 			if (errno == EACCES)
-				{
-					exit(126);
-				}
+			{
+				exit(126);
+			}
 			exit(1);
 		}
 	}
@@ -35,9 +35,9 @@ void cre_ch(info_t *info)
 		{
 			info->status = WEXITSTATUS(info->status);
 			if (info->status == 126)
-				{
-					error_print(info, "Permission denied\n");
-				}
+			{
+				error_print(info, "Permission denied\n");
+			}
 		}
 	}
 }

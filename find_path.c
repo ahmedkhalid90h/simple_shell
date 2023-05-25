@@ -14,15 +14,15 @@ char *find_th(info_t *info, char *path_str, char *cmd_d)
 	char *path;
 
 	if (!path_str)
-		{
-			return (NULL);
-		}
+	{
+		return (NULL);
+	}
 	if ((_strlen(cmd_d) > 2) && sta_with(cmd_d, "./"))
 	{
 		if (is_comid(info, cmd_d))
-			{
-				return (cmd_d);
-			}
+		{
+			return (cmd_d);
+		}
 	}
 	while (1)
 	{

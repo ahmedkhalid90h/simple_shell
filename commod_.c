@@ -13,9 +13,9 @@ int is_comid(info_t *info, char *path_file)
 
 	(void)info;
 	if (!path_file || stat(path_file, &st))
-		{
-			return (0);
-		}
+	{
+		return (0);
+	}
 
 	if (st.st_mode & S_IFREG)
 	{
