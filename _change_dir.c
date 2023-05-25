@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * _change_dir - changes the current directory of the process to the one
  * @info: Structure containing potential arguments. Used to maintain a
@@ -10,20 +9,17 @@ int _change_dir(info_t *info)
 {
 	char *s, *dir_qw, buffer_ss[1024];
 	int chdir_ret;
-
 	s = getcwd(buffer_ss, 1024);
 	if (!s)
-		{
-			_puts("TODO: >>getcwd failure  emsg here<<\n");
-		}
+		_puts("TODO: >>getcwd failure  emsg here<<\n");
 	if (!info->argv[1])
 	{
 		dir_qw = _getenv(info, "HOME=");
 		if (!dir_qw)
-			{
-				chdir_ret =
-				chdir((dir_qw = _getenv(info, "PWD=")) ? dir_qw : "/");
-			}
+		{
+			chdir_ret =
+			chdir((dir_qw = _getenv(info, "PWD=")) ? dir_qw : "/");
+		}
 		else
 			chdir_ret = chdir(dir_qw);
 	}
