@@ -11,8 +11,9 @@ char *sta_with(const char *hay, const char *needle)
 {
 	while (*needle)
 		if (*needle++ != *hay++)
-			{
-				return (NULL);
-			}
+		{
+			return (NULL);
+		}
 	return ((char *)hay);
 }
+

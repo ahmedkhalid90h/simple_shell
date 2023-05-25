@@ -14,7 +14,7 @@ int _getline(info_t *info, char **ptr_q, size_t *leng)
 	size_t k;
 	ssize_t r = 0, s = 0;
 	char *p = NULL, *new_p = NULL, *c;
-	
+
 	p = *ptr_q;
 	if (p && leng)
 		s = *leng;

@@ -20,15 +20,15 @@ void *_realloc(void *ptr_qw, unsigned int old_sqz, unsigned int new_sqz)
 		return (free(ptr_qw), NULL);
 		}
 	if (new_sqz == old_sqz)
-		{
-			return (ptr_qw);
-		}
+	{
+		return (ptr_qw);
+	}
 
 	p = malloc(new_sqz);
 	if (!p)
-		{
-			return (NULL);
-		}
+	{
+		return (NULL);
+	}
 
 	old_sqz = old_sqz < new_sqz ? old_sqz : new_sqz;
 	while (old_sqz--)
@@ -36,3 +36,4 @@ void *_realloc(void *ptr_qw, unsigned int old_sqz, unsigned int new_sqz)
 	free(ptr_qw);
 	return (p);
 }
+
