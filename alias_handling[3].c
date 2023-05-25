@@ -14,9 +14,9 @@ int print_al(list_t *node)
 	{
 		p_h = _strchr_yu(node->str, '=');
 		for (a = node->str; a <= p_h; a++)
-			{
-				_putchar(*a);
-			}
+		{
+			_putchar(*a);
+		}
 		_putchar('\'');
 		_puts(p_h + 1);
 		_puts("'\n");
