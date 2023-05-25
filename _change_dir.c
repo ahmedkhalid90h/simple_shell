@@ -16,10 +16,8 @@ int _change_dir(info_t *info)
 	{
 		dir_qw = _getenv(info, "HOME=");
 		if (!dir_qw)
-		{
 			chdir_ret =
 			chdir((dir_qw = _getenv(info, "PWD=")) ? dir_qw : "/");
-		}
 		else
 			chdir_ret = chdir(dir_qw);
 	}
