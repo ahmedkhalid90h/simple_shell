@@ -12,7 +12,7 @@ void _puts_error(char *str)
 
 	if (!str)
 	{
-        return;
+    return;
     }
 	while (str[i] != '\0')
 	{
@@ -20,3 +20,4 @@ void _puts_error(char *str)
 		i++;
 	}
 }
+
