@@ -33,6 +33,7 @@ int main(int argc, char **argv)
 			}
 			return (EXIT_FAILURE);
 		}
+		info->readfd = s_fd;
 	}
 	populate_env(info);
 	hsh(info, argv);
